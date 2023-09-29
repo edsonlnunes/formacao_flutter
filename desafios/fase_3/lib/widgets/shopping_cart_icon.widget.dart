@@ -22,12 +22,17 @@ class ShoppingCartIcon extends StatelessWidget {
       },
       child: Observer(
         builder: (context) {
-          return Badge.count(
-            count: GetIt.I.get<ShoppingCartStore>().productsInCart.length,
-            child: const Icon(
-              Icons.shopping_cart_outlined,
-            ),
-          );
+          // return Badge.count(
+          //   count: GetIt.I.get<ShoppingCartStore>().productsInCart.length,
+          //   child: const Icon(
+          //     Icons.shopping_cart_outlined,
+          //   ),
+          // );
+          return Text(GetIt.I
+              .get<ShoppingCartStore>()
+              .productsInCart
+              .length
+              .toString());
         },
       ),
     );

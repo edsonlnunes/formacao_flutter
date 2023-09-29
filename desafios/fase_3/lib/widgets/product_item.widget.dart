@@ -29,7 +29,7 @@ class ProductItem extends StatelessWidget {
         ),
         backgroundColor: result ? Colors.yellow[300] : Colors.red[300],
         behavior: SnackBarBehavior.fixed,
-        showCloseIcon: true,
+        // showCloseIcon: true,
         duration: const Duration(seconds: 1),
       ),
     );

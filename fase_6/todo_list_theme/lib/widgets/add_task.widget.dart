@@ -107,11 +107,14 @@ class _AddTaskState extends State<AddTask> with SingleTickerProviderStateMixin {
             AnimatedContainer(
               duration: const Duration(milliseconds: 200),
               height: containerHeight,
-              child: TextField(
-                controller: descriptionController,
-                decoration: const InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "Adicionar informações",
+              child: Visibility(
+                visible: containerHeight != 0,
+                child: TextField(
+                  controller: descriptionController,
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    hintText: "Adicionar informações",
+                  ),
                 ),
               ),
             ),
