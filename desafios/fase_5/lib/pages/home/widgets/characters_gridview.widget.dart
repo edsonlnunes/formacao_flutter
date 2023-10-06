@@ -21,6 +21,7 @@ class CharactersGridView extends StatelessWidget {
     return Observer(
       builder: (context) {
         return GridView.builder(
+          key: Key("gridView"),
           controller: _scrollController,
           itemCount: _homeStore.filteredCharacters.length + 1,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

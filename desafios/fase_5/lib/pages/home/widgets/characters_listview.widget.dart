@@ -21,6 +21,7 @@ class CharactersListView extends StatelessWidget {
     return Observer(
       builder: (_) {
         return ListView.builder(
+          key: Key("listView"),
           controller: _scrollController,
           itemCount: _homeStore.filteredCharacters.length + 1,
           itemBuilder: (_, index) {

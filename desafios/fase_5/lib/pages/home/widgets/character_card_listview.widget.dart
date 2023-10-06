@@ -34,6 +34,7 @@ class CharacterCardListView extends StatelessWidget with LoadColor {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
+      key: Key("listCard"),
       duration: const Duration(milliseconds: 350),
       margin: const EdgeInsets.symmetric(vertical: 5),
       padding: const EdgeInsets.all(10),

@@ -20,6 +20,7 @@ class CharacterCardGridView extends StatelessWidget with LoadColor {
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: Key("gridCard"),
       decoration: BoxDecoration(
         color: _character.backgroundColor,
         borderRadius: BorderRadius.circular(15),
@@ -40,6 +41,7 @@ class CharacterCardGridView extends StatelessWidget with LoadColor {
           Hero(
             tag: Key(_character.id.toString()),
             child: CachedNetworkImage(
+              key: Key("imageGridCard"),
               imageUrl: _character.image,
               height: 130,
             ),

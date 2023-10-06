@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:fase_3/pages/shopping_cart.page.dart';
 import 'package:fase_3/stores/shopping_cart.store.dart';
 import 'package:flutter/material.dart';
@@ -20,13 +21,25 @@ class ShoppingCartIcon extends StatelessWidget {
       child: Center(
         child: Observer(
           builder: (context) {
-            return Badge.count(
-              count: shoppingCartStore.productsCart.length,
+            return Badge(
+              badgeContent: Text(
+                shoppingCartStore.productsCart.length.toString(),
+                style: const TextStyle(
+                  color: Colors.white,
+                ),
+              ),
               child: const Icon(
                 Icons.shopping_cart_outlined,
                 color: Colors.black,
               ),
             );
+            // return Badge.count(
+            //   count: shoppingCartStore.productsCart.length,
+            //   child: const Icon(
+            //     Icons.shopping_cart_outlined,
+            //     color: Colors.black,
+            //   ),
+            // );
           },
         ),
       ),

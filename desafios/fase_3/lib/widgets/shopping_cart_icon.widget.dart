@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
@@ -28,11 +29,14 @@ class ShoppingCartIcon extends StatelessWidget {
           //     Icons.shopping_cart_outlined,
           //   ),
           // );
-          return Text(GetIt.I
-              .get<ShoppingCartStore>()
-              .productsInCart
-              .length
-              .toString());
+          return Badge(
+            badgeContent: Text(
+              GetIt.I.get<ShoppingCartStore>().productsInCart.length.toString(),
+            ),
+            child: const Icon(
+              Icons.shopping_cart_outlined,
+            ),
+          );
         },
       ),
     );
