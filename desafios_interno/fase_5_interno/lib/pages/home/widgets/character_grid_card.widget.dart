@@ -69,6 +69,7 @@ class _CharacterGridCardState extends State<CharacterGridCard> {
             child: CachedNetworkImage(
               imageUrl: widget.character.image,
               height: 130,
+              key: const Key("imageGridCard"),
             ),
           ),
           const SizedBox(

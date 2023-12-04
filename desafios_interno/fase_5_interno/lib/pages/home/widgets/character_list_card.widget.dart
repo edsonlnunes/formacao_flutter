@@ -59,6 +59,7 @@ class _CharacterListCardState extends State<CharacterListCard> {
               tag: ValueKey(widget.character.id),
               child: CachedNetworkImage(
                 imageUrl: widget.character.image,
+                key: const Key("imageListCard"),
               ),
             ),
           ),

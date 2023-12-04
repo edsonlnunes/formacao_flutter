@@ -28,7 +28,10 @@ class ProductItem extends StatelessWidget {
                 child: Container(
                   height: 200,
                   color: Colors.grey[200],
-                  child: Image.asset("assets/iphone.png"),
+                  child: Image.asset(
+                    "assets/iphone.png",
+                    key: const Key("productImage"),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -105,9 +108,30 @@ class ProductItem extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: GestureDetector(
+                        key: const Key("addProductToCart"),
                         onTap: () {
                           final store = GetIt.I.get<ShoppingCartStore>();
-                          store.addProduct(product);
+                          final result = store.addProduct(product);
+
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                result
+                                    ? 'Produto adicionado!'
+                                    : "Produto não adicionado!",
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              backgroundColor:
+                                  result ? Colors.yellow[300] : Colors.red[300],
+                              behavior: SnackBarBehavior.fixed,
+                              // showCloseIcon: true,
+                              duration: const Duration(seconds: 1),
+                            ),
+                          );
                         },
                         child: const Text(
                           "Add carrinho",

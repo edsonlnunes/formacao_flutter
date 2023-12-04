@@ -75,6 +75,7 @@ class _HomePageState extends State<HomePage> {
                 height: 20,
               ),
               TextField(
+                key: const Key("filterInput"),
                 decoration: InputDecoration(
                   hintText: "Nome ou identificador",
                   filled: true,
@@ -100,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Observer(
                     builder: (context) {
                       return Icon(
-                        store.showInList ? Icons.list : Icons.grid_view,
+                        store.showInList ? Icons.grid_view : Icons.list,
                         color: Colors.white,
                         size: 30,
                       );

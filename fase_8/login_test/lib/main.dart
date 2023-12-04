@@ -1,8 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:login_test/pages/splash_screen.page.dart';
 
 import 'firebase_options.dart';
-import 'pages/home_twitter.page.dart';
+import 'pages/login.page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeTwitterPage(),
+      home: const SplashScreenPage(),
     );
   }
 }

@@ -14,7 +14,7 @@ class ResultQuiz extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "O quiz acabou. Você fez $score ponto(s)",
+            "O quiz acabou.\nVocê fez $score ponto(s)",
             style: const TextStyle(
               fontSize: 40,
               fontWeight: FontWeight.w500,
@@ -25,6 +25,7 @@ class ResultQuiz extends StatelessWidget {
             height: 20,
           ),
           TextButton(
+            key: const Key("returnBtn"),
             style: TextButton.styleFrom(
               foregroundColor: Colors.black,
             ),

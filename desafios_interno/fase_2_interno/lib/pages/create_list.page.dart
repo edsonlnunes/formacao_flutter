@@ -33,6 +33,7 @@ class _CreateListPageState extends State<CreateListPage> {
               Expanded(
                 child: Center(
                   child: TextField(
+                    key: const Key("listNameInput"),
                     controller: textController,
                     decoration: const InputDecoration(
                       hintText: "Nome da lista",
@@ -48,6 +49,7 @@ class _CreateListPageState extends State<CreateListPage> {
                 children: [
                   Expanded(
                     child: TextButton(
+                      key: const Key("backToListsBtn"),
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
@@ -72,6 +74,7 @@ class _CreateListPageState extends State<CreateListPage> {
                   ),
                   Expanded(
                     child: TextButton(
+                      key: const Key("createListBtn"),
                       onPressed: () {
                         if (textController.text.isNotEmpty) {
                           Navigator.of(context).pop(textController.text);

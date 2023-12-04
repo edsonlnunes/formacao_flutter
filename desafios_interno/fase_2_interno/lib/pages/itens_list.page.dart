@@ -43,6 +43,7 @@ class _ItensListPageState extends State<ItensListPage> {
         backgroundColor: Colors.green,
         actions: [
           TextButton(
+            key: const Key("updateListBtn"),
             style: ButtonStyle(
               overlayColor: MaterialStateProperty.all(Colors.white30),
             ),
@@ -88,6 +89,7 @@ class _ItensListPageState extends State<ItensListPage> {
                       child: SizedBox(
                         width: 25,
                         child: Checkbox(
+                          key: const Key("productCheckbox"),
                           value: item.buyed,
                           shape: const CircleBorder(),
                           side: const BorderSide(color: Colors.blue),
@@ -159,6 +161,7 @@ class _ItensListPageState extends State<ItensListPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
+        key: const Key("addNewItemBtn"),
         onPressed: () async {
           final newItem = await showModalBottomSheet<ItemList>(
             isScrollControlled: true,

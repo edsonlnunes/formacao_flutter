@@ -20,6 +20,7 @@ class CharacterGridView extends StatelessWidget {
     return Observer(
       builder: (context) {
         return GridView.builder(
+          key: const Key("gridView"),
           controller: scrollController,
           itemCount: store.filteredCharacters.length + 1,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -30,6 +31,7 @@ class CharacterGridView extends StatelessWidget {
             if (index < store.filteredCharacters.length) {
               final character = store.filteredCharacters[index];
               return InkWell(
+                key: const Key("gridCard"),
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(

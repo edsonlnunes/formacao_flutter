@@ -52,6 +52,7 @@ class _AddQuestionPageState extends State<AddQuestionPage> {
         child: Column(
           children: [
             CustomInput(
+              key: const Key("inputQuestion"),
               controller: questionController,
               label: "Pergunta",
             ),
@@ -59,6 +60,7 @@ class _AddQuestionPageState extends State<AddQuestionPage> {
               height: 50,
             ),
             CustomInput(
+              key: const Key("inputAnswer"),
               controller: answerController,
               label: "Resposta",
               maxLine: 3,
@@ -70,6 +72,7 @@ class _AddQuestionPageState extends State<AddQuestionPage> {
               height: 50,
               width: 150,
               child: ElevatedButton(
+                key: const Key("addQuestionBtn"),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                 ),

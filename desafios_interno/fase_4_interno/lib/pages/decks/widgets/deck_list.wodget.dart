@@ -32,6 +32,7 @@ class DeckListPage extends StatelessWidget {
       itemBuilder: (ctx, index) {
         final deck = store.decks[index];
         return InkWell(
+          key: const Key("deckCard"),
           onTap: () => navigateToDeckDetail(context, deck),
           onLongPress: () => store.removeDeck(deck.id),
           child: Container(

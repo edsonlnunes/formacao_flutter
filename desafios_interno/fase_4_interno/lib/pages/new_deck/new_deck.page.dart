@@ -44,6 +44,7 @@ class _NewDeckPageState extends State<NewDeckPage> {
               height: 50,
             ),
             CustomInput(
+              key: const Key("deckTitle"),
               controller: titleController,
               label: "Título do deck",
             ),
@@ -54,6 +55,7 @@ class _NewDeckPageState extends State<NewDeckPage> {
               height: 50,
               width: 150,
               child: ElevatedButton(
+                key: const Key("addDeckBtn"),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                 ),

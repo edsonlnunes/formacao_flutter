@@ -3,17 +3,19 @@ import 'package:flutter/material.dart';
 class SocialButton extends StatelessWidget {
   final String pathImage;
   final String text;
+  final void Function()? onPressed;
 
   const SocialButton({
     super.key,
     required this.pathImage,
     required this.text,
+    this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onPressed,
       borderRadius: BorderRadius.circular(55),
       child: Container(
         height: 55,

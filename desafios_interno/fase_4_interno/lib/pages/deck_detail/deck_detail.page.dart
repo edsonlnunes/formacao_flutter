@@ -39,10 +39,9 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
       appBar: AppBar(
         title: Text(deckStore.safetyDeck.name),
         backgroundColor: Colors.black,
-        leading: IconButton(
-          icon: Icon(Platform.isIOS ? Icons.arrow_back_ios : Icons.arrow_back),
-          onPressed: () => Navigator.of(context).pop(deckStore.questions),
-          tooltip: "Back",
+        leading: BackButton(
+          key: const Key("backToPreviousPageBtn"),
+          onPressed: () => Navigator.of(context).pop(),
         ),
       ),
       body: Center(
@@ -66,7 +65,7 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
                   Observer(
                     builder: (context) {
                       return Text(
-                        "${deckStore.questions.length} ${deckStore.questions.length == 1 ? 'cartão' : 'cartões'}",
+                        "${deckStore.questions.length} cartões",
                         style: const TextStyle(
                           fontSize: 24,
                         ),

@@ -20,9 +20,7 @@ class FilterResult extends StatelessWidget {
           children: [
             Observer(builder: (context) {
               return Text(
-                productsStore.products.isEmpty
-                    ? "Nenhum resultado..."
-                    : "100 resultados",
+                "${productsStore.products.length} resultados",
               );
             }),
             Row(

@@ -47,5 +47,35 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb306342038785700</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.130319705765-38ier7rn5k6qkb3rt3jv9d2lquiqdeh4</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>306342038785700</string>
+	<key>FacebookClientToken</key>
+	<string>cfcd10614825fcc8889d2fdcb0ab20d6</string>
+	<key>FacebookDisplayName</key>
+	<string>Social Login Example</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+	</array>
+	<key>GIDClientID</key>
+	<string>130319705765-38ier7rn5k6qkb3rt3jv9d2lquiqdeh4.apps.googleusercontent.com</string>
 </dict>
 </plist>

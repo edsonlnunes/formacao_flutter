@@ -51,6 +51,7 @@ class QuizContent extends StatelessWidget {
                 height: 20,
               ),
               TextButton(
+                key: const Key("switchBetweenAnswerQuestionBtn"),
                 style: TextButton.styleFrom(
                   foregroundColor: Colors.red,
                 ),
@@ -67,6 +68,7 @@ class QuizContent extends StatelessWidget {
                 height: 100,
               ),
               AnswerQuestionButton(
+                key: const Key("correctAnswerBtn"),
                 label: "Acertei :)",
                 color: Colors.green,
                 onPressed: () => store.nextQuestion(true),
@@ -75,6 +77,7 @@ class QuizContent extends StatelessWidget {
                 height: 20,
               ),
               AnswerQuestionButton(
+                key: const Key("wrongAnswerBtn"),
                 label: "Errei :(",
                 color: Colors.red,
                 onPressed: () => store.nextQuestion(false),

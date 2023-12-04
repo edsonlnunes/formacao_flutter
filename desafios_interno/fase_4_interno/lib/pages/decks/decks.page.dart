@@ -39,6 +39,7 @@ class DecksPage extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       floatingActionButton: FloatingActionButton.extended(
+        key: const Key("addNewDeckFloatingBtn"),
         backgroundColor: Colors.black,
         onPressed: () => addDeck(context),
         label: const Text("Adicionar"),

@@ -18,7 +18,7 @@ class AddressInfo extends StatelessWidget {
           width: 10,
         ),
         Text(
-          "Informe seu CEP",
+          "Informe o seu cep",
           style: TextStyle(
             fontSize: 12,
             color: Colors.black,
@@ -28,7 +28,7 @@ class AddressInfo extends StatelessWidget {
           width: 5,
         ),
         Icon(
-          Icons.keyboard_arrow_right,
+          Icons.arrow_forward_ios,
           color: Colors.black,
           size: 20,
         ),

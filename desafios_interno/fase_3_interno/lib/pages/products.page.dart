@@ -35,6 +35,7 @@ class ProductsPage extends StatelessWidget {
                         itemCount: productsStore.products.length,
                         itemBuilder: (ctx, index) {
                           return ProductItem(
+                            key: const Key("productItem"),
                             product: productsStore.products[index],
                           );
                         },

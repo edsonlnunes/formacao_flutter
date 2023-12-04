@@ -29,7 +29,7 @@ mixin _$ShoppingCartStore on ShoppingCartStoreBase, Store {
       ActionController(name: 'ShoppingCartStoreBase', context: context);
 
   @override
-  void addProduct(Product product) {
+  bool addProduct(Product product) {
     final _$actionInfo = _$ShoppingCartStoreBaseActionController.startAction(
         name: 'ShoppingCartStoreBase.addProduct');
     try {

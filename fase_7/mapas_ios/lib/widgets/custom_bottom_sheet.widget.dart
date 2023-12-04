@@ -18,7 +18,7 @@ class CustomBottomSheet extends StatelessWidget {
       builder: (context, scrollController) {
         return Container(
           decoration: const BoxDecoration(
-            color: Color(0xFF121212),
+            color: Color.fromARGB(255, 100, 96, 96),
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(24),
             ),

@@ -12,6 +12,7 @@ class EmptyShoppingList extends StatelessWidget {
           Image.asset(
             "assets/images/lista-de-compras.png",
             height: 100,
+            key: const Key("emptyListImage"),
           ),
           const SizedBox(
             height: 40,

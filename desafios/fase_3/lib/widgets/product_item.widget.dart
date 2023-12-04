@@ -51,7 +51,10 @@ class ProductItem extends StatelessWidget {
                 child: Container(
                   color: Colors.grey[300],
                   height: 200,
-                  child: Image.asset("assets/iphone.png"),
+                  child: Image.asset(
+                    "assets/iphone.png",
+                    key: const Key("image"),
+                  ),
                 ),
               ),
               const SizedBox(

@@ -17,6 +17,7 @@ class StartQuizButton extends StatelessWidget {
       height: 60,
       width: 250,
       child: ElevatedButton(
+        key: const Key("startQuizBtn"),
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.black,
         ),

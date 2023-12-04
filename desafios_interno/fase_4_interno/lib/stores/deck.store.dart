@@ -1,7 +1,7 @@
 import 'package:mobx/mobx.dart';
 
-import '../../models/question.model.dart';
 import '../models/deck.model.dart';
+import '../models/question.model.dart';
 
 part 'deck.store.g.dart';
 

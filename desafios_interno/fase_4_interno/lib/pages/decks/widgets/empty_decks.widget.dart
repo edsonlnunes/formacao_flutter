@@ -19,12 +19,14 @@ class EmptyDecksPage extends StatelessWidget {
             child: Image.asset(
               "assets/no_decks.png",
               height: 300,
+              key: const Key("emptyDeckImage"),
             ),
           ),
           SizedBox(
             width: double.infinity,
             height: 60,
             child: OutlinedButton(
+              key: const Key("addNewDeckOutlineBtn"),
               style: OutlinedButton.styleFrom(
                 foregroundColor: Colors.black,
               ),

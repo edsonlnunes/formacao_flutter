@@ -11,11 +11,11 @@ class ShoppingCartPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text("Carrinho de compras"),
         leading: BackButton(
           key: Key("btnvoltar"),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: const Text("Carrinho de compras"),
       ),
       body: cartStore.productsInCart.isEmpty
           ? Center(

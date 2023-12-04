@@ -11,7 +11,12 @@ abstract class ShoppingCartStoreBase with Store {
   ObservableList<Product> productsCart = <Product>[].asObservable();
 
   @action
-  void addProduct(Product product) {
+  bool addProduct(Product product) {
+    if (productsCart.any((p) => p.id == product.id)) {
+      return false;
+    }
+
     productsCart.add(product);
+    return true;
   }
 }

@@ -20,12 +20,14 @@ class CharacterListView extends StatelessWidget {
     return Observer(
       builder: (context) {
         return ListView.builder(
+          key: const Key("listView"),
           controller: scrollController,
           itemCount: store.filteredCharacters.length + 1,
           itemBuilder: (_, index) {
             if (index < store.filteredCharacters.length) {
               final character = store.filteredCharacters[index];
               return InkWell(
+                key: const Key("listCard"),
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(

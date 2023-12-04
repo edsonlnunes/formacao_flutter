@@ -10,6 +10,7 @@ class SearchProducts extends StatelessWidget {
     return SizedBox(
       height: 30,
       child: TextField(
+        key: const Key("inputSearch"),
         decoration: InputDecoration(
           contentPadding: EdgeInsets.zero,
           fillColor: Colors.white,

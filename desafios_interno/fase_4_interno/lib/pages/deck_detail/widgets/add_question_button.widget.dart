@@ -29,6 +29,7 @@ class AddQuestionButton extends StatelessWidget {
       height: 60,
       width: 250,
       child: OutlinedButton(
+        key: const Key('addNewQuestionBtn'),
         style: OutlinedButton.styleFrom(
           foregroundColor: Colors.black,
           side: const BorderSide(

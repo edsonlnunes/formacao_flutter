@@ -2,8 +2,6 @@ import 'package:clone_home_medium/widgets/circle_social_button.widget.dart';
 import 'package:clone_home_medium/widgets/social_button.widget.dart';
 import 'package:clone_home_medium/widgets/terms_and_privacy.widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class HomeMediumPage extends StatelessWidget {
   const HomeMediumPage({super.key});
@@ -24,23 +22,27 @@ class HomeMediumPage extends StatelessWidget {
                   alignment: Alignment.topCenter,
                   child: Image.asset(
                     "assets/images/medium.png",
+                    key: const ValueKey("imageMedium"),
                     width: 240,
                   ),
                 ),
               ),
               const Text(
                 "Join Medium.",
+                key: ValueKey("textTitle"),
                 style: TextStyle(
                   fontSize: 44,
                 ),
               ),
               const SizedBox(height: 40),
               const SocialButton(
+                key: ValueKey("signupGoogle"),
                 asset: "assets/images/google.png",
                 text: "Sign up with Google",
               ),
               const SizedBox(height: 15),
               const SocialButton(
+                key: ValueKey("signupEmail"),
                 asset: "assets/images/email.png",
                 text: "Sign up with Email",
               ),
@@ -51,6 +53,7 @@ class HomeMediumPage extends StatelessWidget {
                 children: const [
                   Expanded(
                     child: Divider(
+                      key: ValueKey("dividerLeft"),
                       thickness: 1,
                       color: Colors.black,
                     ),
@@ -64,6 +67,7 @@ class HomeMediumPage extends StatelessWidget {
                   ),
                   Expanded(
                     child: Divider(
+                      key: ValueKey("dividerRight"),
                       thickness: 1,
                       color: Colors.black,
                     ),
@@ -74,6 +78,7 @@ class HomeMediumPage extends StatelessWidget {
                 height: 40,
               ),
               const CircleSocialButton(
+                key: ValueKey("buttonFacebook"),
                 asset: "assets/images/facebook.png",
               ),
               const SizedBox(

@@ -26,7 +26,7 @@ abstract class ProductsStoreBase with Store {
       (index) => Product(
         id: index,
         name: "Apple Iphone 11 Pro (128gb) - Preto",
-        price: 2999,
+        price: 599.99 * (index + 1),
         rate: Random().nextInt(6).toDouble(),
       ),
     );
