@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1080878765298",
+    "project_id": "fase-8-login",
+    "storage_bucket": "fase-8-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080878765298:android:faaac39af98e2fc4ee6c6b",
+        "android_client_info": {
+          "package_name": "com.example.social_login_notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1080878765298-14cj9cd3tf8bpunnvk2km6lmb8dkatde.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.social_login_notification",
+            "certificate_hash": "1ce70e26ecb41714dec8a8350d60d578519c328d"
+          }
+        },
+        {
+          "client_id": "1080878765298-mh4s102edh24492duo9pe73po61j24rs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKGldQTN3BRNREfYwRJWK3S7_JG1bz178"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1080878765298-mh4s102edh24492duo9pe73po61j24rs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1080878765298-cpd2thpdit9k6gqbe2vr1mqmsjh10tmh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.socialLoginNotification"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

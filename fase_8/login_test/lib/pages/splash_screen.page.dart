@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:login_test/pages/home.page.dart';
-import 'package:login_test/pages/login.page.dart';
+import 'package:login_test/pages/login/login.page.dart';
 
 class SplashScreenPage extends StatefulWidget {
   const SplashScreenPage({super.key});
