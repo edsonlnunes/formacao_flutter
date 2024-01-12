@@ -10,34 +10,17 @@ class FirebaseNotificationService {
   }) : _notificationService = localNotificationService;
 
   Future<void> initilize() async {
-    await FirebaseMessaging.instance
-        .setForegroundNotificationPresentationOptions(
-      alert: true,
-      badge: true,
-      sound: true,
-    );
-
-    _getDeviceFirebaseToken();
-
     FirebaseMessaging.instance.requestPermission();
+
+    String? token = await FirebaseMessaging.instance.getToken();
+
+    log("TOKEN - $token");
 
     FirebaseMessaging.onMessage.listen(_notificationService.showNotification);
 
     FirebaseMessaging.onMessageOpenedApp.listen(_goToPageAfterMessage);
 
     FirebaseMessaging.onBackgroundMessage(onBackgroundMessage);
-  }
-
-  void _getDeviceFirebaseToken() async {
-    String? token = await FirebaseMessaging.instance.getToken();
-
-    log('TOKEN - $token');
-
-    if (token == null) return;
-
-    FirebaseMessaging.instance.onTokenRefresh.listen((newToken) {
-      log("NOVO TOKEN - $newToken");
-    });
   }
 
   void _goToPageAfterMessage(RemoteMessage message) {

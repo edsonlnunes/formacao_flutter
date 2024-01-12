@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:social_login_notification/pages/login/login.store.dart';
 import '../profile.page.dart';
 import 'widgets/login_button.widget.dart';
 
@@ -13,35 +15,15 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  Future<UserCredential> signInWithGoogle() async {
-    // Trigger the authentication flow
-    // Abre a página do google para realizar o login (ou selecionar a conta)
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+  final loginStore = LoginStore();
 
-    // Obtain the auth details from the request
-    final GoogleSignInAuthentication? googleAuth =
-        await googleUser?.authentication;
-
-    // Create a new credential
-    final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth?.accessToken,
-      idToken: googleAuth?.idToken,
+  void navigateToProfilePage() {
+    if (!mounted) return;
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (_) => const ProfilePage(),
+      ),
     );
-
-    // Once signed in, return the UserCredential
-    return await FirebaseAuth.instance.signInWithCredential(credential);
-  }
-
-  Future<UserCredential> signInWithFacebook() async {
-    // Trigger the sign-in flow
-    final LoginResult loginResult = await FacebookAuth.instance.login();
-
-    // Create a credential from the access token
-    final OAuthCredential facebookAuthCredential =
-        FacebookAuthProvider.credential(loginResult.accessToken!.token);
-
-    // Once signed in, return the UserCredential
-    return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
   }
 
   @override
@@ -68,36 +50,32 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * .1,
               ),
-              LoginButton(
-                pathImage: "assets/images/google.png",
-                text: "Continue with Google",
-                onPressed: () async {
-                  await signInWithGoogle();
-
-                  if (!mounted) return;
-
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (_) => const ProfilePage(),
-                    ),
+              Observer(
+                builder: (context) {
+                  return LoginButton(
+                    isLoading: loginStore.isGoogleLoading,
+                    pathImage: "assets/images/google.png",
+                    text: "Continue with Google",
+                    onPressed: () async {
+                      await loginStore.signInWithGoogle();
+                      navigateToProfilePage();
+                    },
                   );
                 },
               ),
               const SizedBox(
                 height: 15,
               ),
-              LoginButton(
-                pathImage: "assets/images/facebook.png",
-                text: "Continue with Facebook",
-                onPressed: () async {
-                  await signInWithFacebook();
-
-                  if (!mounted) return;
-
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (_) => const ProfilePage(),
-                    ),
+              Observer(
+                builder: (context) {
+                  return LoginButton(
+                    isLoading: loginStore.isFacebookLoading,
+                    pathImage: "assets/images/facebook.png",
+                    text: "Continue with Facebook",
+                    onPressed: () async {
+                      await loginStore.signInWithFacebook();
+                      navigateToProfilePage();
+                    },
                   );
                 },
               ),
